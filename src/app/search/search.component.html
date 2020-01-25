@@ -1,0 +1,52 @@
+<div class="container">
+    <div   style="text-align: center;">
+        <h1>Twitter Search</h1>                
+    </div>
+    <div class="row" style="padding: 50px">
+        <div  >
+            <form #searchForm="ngForm" (ngSubmit)="searchForm.valid && searchFunction(searchForm)">
+
+                <input type="text"  [ngClass]="{'invalid-textbox' :searchForm.submitted  }" [(ngModel)]="searchValue"  class="inputCss" placeholder="Search... #nodejs,#india,cricket" name="search" required>
+                <button   class ="searchbtn" type="submit"><i class="fa fa-search"></i></button><br><br><br><br>
+            </form>
+        </div>
+        <div >
+            <div
+            class="search-results"
+            infiniteScroll
+            [infiniteScrollDistance]="2"
+            [infiniteScrollThrottle]="50"
+
+            (scrolled)="onScroll()"   
+        
+            >
+                <div *ngIf = "!dataCheck">
+                    <div class="shadow-lg p-3 mb-5 bg-white rounded" *ngFor="let dataArray of dataArray">
+
+                        <h4>{{ dataArray?.tweet }}</h4>
+                      
+                    </div>
+                </div>
+                <div   *ngIf="spinnerShow">
+                    <mat-spinner style="margin:0 auto;"  [diameter]="50"></mat-spinner>
+                </div>
+                <div  *ngIf="emptyDataCheck" style="text-align: center;">
+                    <h1>No More Data</h1>                
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div  *ngIf="dataCheck" style="text-align: center;">
+        <h1>No  Data</h1>                
+    </div>
+</div>
+
+
+<!-- <mat-spinner [diameter]="50"></mat-spinner> -->
+
+
+
+
+
+

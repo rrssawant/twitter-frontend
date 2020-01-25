@@ -1,0 +1,38 @@
+.search-results {
+    height: 100%;
+    /* overflow: scroll; */
+  }
+
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  
+
+  .inputCss{
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 600px;
+    background: #f1f1f1;
+  }
+  
+  /* Style the submit button */
+  .searchbtn {
+    width: 5%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+ 
